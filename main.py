@@ -77,7 +77,7 @@ def menu():
                 mark = int(input("Input student mark: "))
 
                 add_marks(student, mark)
-
+        print()
         selection = int(input("Enter selection: "))
 
 
