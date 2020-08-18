@@ -14,6 +14,13 @@ def add_marks(student, mark):
     # return None
 
 
+def my_sum(myList):
+    total = 0
+    for numbers in myList:
+        total = total + numbers
+    return total
+
+
 if __name__ == '__main__':
     s = create_student_dictionary()
     add_marks(s, 40)  # passing by reference
@@ -24,3 +31,4 @@ A Python variable points to a memory location & the value of variable is stored 
 Passing by reference: when a function changes the 
 original value of the variable using a reference. 
 '''
+
