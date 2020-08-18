@@ -11,6 +11,7 @@
 * Functions
 * Dictionary
 * If statement
+* Enumerate method
 
 *Screenshot:* 
 ![](screenshot.png)

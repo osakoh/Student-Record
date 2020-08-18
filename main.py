@@ -34,35 +34,83 @@ def calculate_average(student):
     return average
 
 
-def print_student_record(student):
-    print("Name: {}\nMarks: {}\nAverage: {}".format(student['name'], student['marks'], calculate_average(student)))
+def individual_student_record(student):
+    print("Name: {}\nMarks: {}\nAverage: {}\n".format(student['name'], student['marks'], calculate_average(student)))
 
 
-def print_student_list(temp_list):
-    for i in temp_list:
-        print_student_record(i)
+def all_student_record(temp_list):
+    for index, student in enumerate(temp_list):
+        print("ID: {}".format(index))
+        individual_student_record(student)
+
+
+def menu():
+    print("_______________________________________\n"
+          "¦____ Student Registration System ____¦\n"
+          "| 1.        Print student list        |\n"
+          "| 2.        Add student to list       |\n"
+          "| 3.        Add mark to student       |\n"
+          "| 0.        Exit application          |\n"
+          "|_____________________________________|")
+    selection = int(input("Enter selection: "))
+
+    while selection != 0:
+
+        if selection == 1:
+            if len(student_list) < 1:
+                print("No details yet, Please create a student first!\n")
+            all_student_record(student_list)
+        elif selection == 2:
+            # student = create_student_dictionary()
+            # student_list.append(student)
+            student_list.append(create_student_dictionary())
+        elif selection == 3:
+            if len(student_list) < 1:
+                print("Can't perform action!\n")
+            else:
+                for index, student in enumerate(student_list):
+                    print("ID.{} -> {}".format(index, student['name']))
+                student_id = int(input("Select student ID: "))
+
+                student = student_list[student_id]
+
+                mark = int(input("Input student mark: "))
+
+                add_marks(student, mark)
+
+        selection = int(input("Enter selection: "))
 
 
 if __name__ == '__main__':
-    s = create_student_dictionary()
-    print(calculate_average(s))
-    add_marks(s, 150)  # passing by reference
-    print(calculate_average(s))
-    add_marks(s, 30)
-    print(calculate_average(s))
-    print_student_record(s)
-    print()
-
-    a = create_student_dictionary()
-    print(calculate_average(a))
-    add_marks(a, 50)  # passing by reference
-    print(calculate_average(s))
-    add_marks(a, 50)
-    print(calculate_average(a))
-    print_student_record(a)
-    print()
-
-    print_student_list([s, a])
+    menu()
+    # s = create_student_dictionary()
+    # print(calculate_average(s))
+    # add_marks(s, 150)  # passing by reference
+    # print(calculate_average(s))
+    # add_marks(s, 30)
+    # print(calculate_average(s))
+    # individual_student_record(s)
+    # print()
+    #
+    # a = create_student_dictionary()
+    # print(calculate_average(a))
+    # add_marks(a, 50)  # passing by reference
+    # print(calculate_average(s))
+    # add_marks(a, 50)
+    # print(calculate_average(a))
+    # individual_student_record(a)
+    # print()
+    #
+    # b = create_student_dictionary()
+    # print(calculate_average(b))
+    # add_marks(b, 100)  # passing by reference
+    # print(calculate_average(s))
+    # add_marks(b, 80)
+    # print(calculate_average(b))
+    # individual_student_record(b)
+    # print()
+    #
+    # all_student_record([s, a, b])
 
 
 '''
