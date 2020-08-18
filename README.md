@@ -3,14 +3,14 @@
 - [x] Create a new student record in the format {'name': 'student_name', 'marks': []}
 - [x] Assign marks to the student
 - [x] Calculate average mark
+- [x] show individual student record 
+- [x] Show all student record
 ---
 
 ##### Built using:
-* Random Module
 * Functions
-* Set comprehension
-* While loop
-* Split()
+* Dictionary
+* If statement
 
 *Screenshot:* 
 ![](screenshot.png)
