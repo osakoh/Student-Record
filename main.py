@@ -1,4 +1,5 @@
 def create_student_dictionary():
+
     name = input("Enter student name: ")
     student_record = {'name': name,
                       'marks': []
