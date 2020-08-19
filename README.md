@@ -13,5 +13,5 @@
 * If statement
 * Enumerate method
 
-*Screenshot:* 
-![](screenshot.png)
+*Screenshot:*
+![Screenshot](screenshot.png)
