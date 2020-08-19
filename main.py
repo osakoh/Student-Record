@@ -72,7 +72,6 @@ def menu():
             student = create_student()
             student_list.append(student)
             print("{} created".format(student.name))
-            menu_options()
         elif selection == 2:
             if len(student_list) < 1:
                 print("Can't perform action!\n")
@@ -86,7 +85,6 @@ def menu():
                 mark = int(input("Input student mark: "))
 
                 add_marks(student, mark)
-                menu_options()
         print()
         selection = int(input("Enter selection: "))
 
