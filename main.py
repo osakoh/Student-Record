@@ -3,14 +3,23 @@ student_list = []
 
 class Student:
     # constructor or initializer
-    def __init__(self):
-        self.name = "Pau"
+    def __init__(self, name):
+        self.name = name
         self.marks = []
+
+    def calculate_average(self):  # is the current object being used
+        if len(self.marks) == 0:
+            return 0
+
+        # total_marks = sum(self.marks)
+        total_marks = my_sum(self.marks)
+        average = total_marks / len(self.marks)
+        return average
 
 
 def create_student():
     name = input("Enter student name: ")
-    student_data = Student()
+    student_data = Student(name)  # creates new Student object using the name parameter
 
     return student_data
 
@@ -29,18 +38,8 @@ def my_sum(my_list):
     return total
 
 
-def calculate_average(student):
-    if len(student.marks) == 0:
-        return 0
-
-    # total_marks = sum(student.marks)
-    total_marks = my_sum(student.marks)
-    average = total_marks/len(student.marks)
-    return average
-
-
 def individual_student_record(student):
-    print("Name: {}\nMarks: {}\nAverage: {}\n".format(student.name, student.marks, calculate_average(student)))
+    print("Name: {}\nMarks: {}\nAverage: {}\n".format(student.name, student.marks, student.calculate_average()))
 
 
 def all_student_record(temp_list):
